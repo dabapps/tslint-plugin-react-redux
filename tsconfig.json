@@ -19,6 +19,6 @@
     "./examples/",
     "./tests/",
     "./types/",
-    "./test-files"
+    "./test-files/"
   ]
 }
