@@ -11,8 +11,6 @@ describe('no-prop-intersection', () => {
   });
 
   it('should do some things', () => {
-    expect(Lint.RuleWalker.prototype.addFailure).not.toHaveBeenCalled();
-
     const filePath = path.resolve(__dirname, '../test-files/failure.tsx');
     const sourceText = ts.sys.readFile(filePath, 'utf8');
 
