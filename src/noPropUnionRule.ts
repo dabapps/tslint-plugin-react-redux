@@ -1,13 +1,7 @@
 import * as Lint from 'tslint';
 import * as ts from 'typescript';
 
-export class Rule extends Lint.Rules.AbstractRule {
-  public static FAILURE_STRING = 'Props must not be an union in Component or PureComponent params';
-
-  public apply(sourceFile: ts.SourceFile): Lint.RuleFailure[] {
-    return this.applyWithWalker(new NoPropUnionWalker(sourceFile, this.getOptions()));
-  }
-}
+const FAILURE_STRING = 'Props must not be an union in Component or PureComponent params';
 
 // The walker takes care of all the work.
 class NoPropUnionWalker extends Lint.RuleWalker {
@@ -46,10 +40,16 @@ class NoPropUnionWalker extends Lint.RuleWalker {
         typeArguments.forEach((typeArgument) => {
           if (typeArgument.kind === ts.SyntaxKind.UnionType) {
             // create a failure at the current position
-            this.addFailure(this.createFailure(node.getStart(), node.getWidth(), Rule.FAILURE_STRING));
+            this.addFailure(this.createFailure(node.getStart(), node.getWidth(), FAILURE_STRING));
           }
         });
       }
     }
+  }
+}
+
+export class Rule extends Lint.Rules.AbstractRule {
+  public apply(sourceFile: ts.SourceFile): Lint.RuleFailure[] {
+    return this.applyWithWalker(new NoPropUnionWalker(sourceFile, this.getOptions()));
   }
 }
