@@ -31,7 +31,7 @@ describe('no-prop-intersection', () => {
     const ruleOptions: Lint.IOptions = {
       ruleArguments: [],
       ruleSeverity: 'error',
-      ruleName: 'no-prop-intersection',
+      ruleName: '<ruleName>',
       disabledIntervals: []
     };
 
