@@ -1,0 +1,69 @@
+{
+  "name": "@dabapps/tslint-plugin-react-redux",
+  "version": "0.0.0",
+  "description": "Tslint rules to enforce react-redux usage",
+  "main": "dist/index.js",
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "scripts": {
+    "dist": "./scripts/dist",
+    "lint": "tsc --noEmit --project tsconfig.json && npm run prettier-check && tslint --project tsconfig.json '{src,tests,types,examples,docs}/**/*.@(ts|tsx)'",
+    "prettier-check": "diffs=$(prettier --list-different '{src,tests,types,examples,docs}/**/*.ts?(x)'); if [ ! -z $diffs ]; then echo \"Run 'npm run prettier'\nThe following files need formatting:\n$diffs\" && exit 1; fi;",
+    "tests": "jest",
+    "test": "npm run lint && npm run tests -- --runInBand --coverage",
+    "prettier": "prettier --write '{src,tests,types,examples,docs}/**/*.ts?(x)'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dabapps/tslint-plugin-react-redux.git"
+  },
+  "keywords": [
+    "tslint",
+    "plugin",
+    "react-redux",
+    "react",
+    "redux",
+    "rules"
+  ],
+  "author": "DabApps",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/dabapps/tslint-plugin-react-redux/issues"
+  },
+  "homepage": "https://github.com/dabapps/tslint-plugin-react-redux#readme",
+  "dependencies": {
+    "typescript": "^2.9.2"
+  },
+  "devDependencies": {
+    "@types/jest": "^23.3.2",
+    "jest": "^23.6.0",
+    "prettier": "^1.14.2",
+    "ts-jest": "^23.10.1",
+    "tslint": "^5.11.0",
+    "tslint-config-dabapps": "github:dabapps/tslint-config-dabapps#v0.5.1"
+  },
+  "jest": {
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    },
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/tests/.*|\\.(test|spec))\\.(ts|tsx|js|jsx)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>/tests/helpers/*"
+    ]
+  }
+}
