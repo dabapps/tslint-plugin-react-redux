@@ -4,6 +4,7 @@
   ],
   "rules": {
     "no-prop-intersection": true,
-    "no-prop-union": true
+    "no-prop-union": true,
+    "require-prop-alias": true
   }
 }
