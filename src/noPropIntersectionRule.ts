@@ -26,8 +26,6 @@ class NoPropIntersectionWalker extends Lint.RuleWalker {
     } else if (node.expression.kind === ts.SyntaxKind.PropertyAccessExpression) {
       return (node.expression as ts.PropertyAccessExpression).name.escapedText;
     }
-
-    return '';
   }
 
   private checkExpression (node: ts.ExpressionWithTypeArguments) {
