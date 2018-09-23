@@ -1,0 +1,9 @@
+{
+  "extends": [
+    "../dist/"
+  ],
+  "rules": {
+    "no-prop-intersection": true,
+    "no-prop-union": true
+  }
+}
