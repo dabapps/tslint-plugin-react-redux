@@ -2,7 +2,7 @@ import * as path from 'path';
 import * as Lint from 'tslint';
 import * as ts from 'typescript';
 
-interface LintRule {
+interface LintRule extends Lint.Rules.AbstractRule {
   new (ruleOptions: Lint.IOptions): Lint.Rules.AbstractRule;
 }
 
