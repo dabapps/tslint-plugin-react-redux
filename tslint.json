@@ -3,6 +3,7 @@
     "tslint-config-dabapps"
   ],
   "rules": {
-    "no-unused-variable": false
+    "no-unused-variable": false,
+    "max-classes-per-file": false
   }
 }
