@@ -18,6 +18,7 @@
     "./src/",
     "./examples/",
     "./tests/",
-    "./types/"
+    "./types/",
+    "./test-files"
   ]
 }
