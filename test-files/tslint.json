@@ -3,7 +3,7 @@
     "../dist/"
   ],
   "rules": {
-    "no-prop-intersection": true,
-    "no-prop-union": true
+    "no-component-prop-intersection": true,
+    "no-component-prop-union": true
   }
 }
