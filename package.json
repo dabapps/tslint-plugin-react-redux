@@ -32,15 +32,16 @@
     "url": "https://github.com/dabapps/tslint-plugin-react-redux/issues"
   },
   "homepage": "https://github.com/dabapps/tslint-plugin-react-redux#readme",
-  "dependencies": {},
+  "dependencies": {
+    "typescript": "^3.3.4000"
+  },
   "devDependencies": {
     "@types/jest": "^23.3.14",
     "jest": "^23.6.0",
     "prettier": "^1.19.1",
     "ts-jest": "^23.10.5",
     "tslint": "^5.20.1",
-    "tslint-config-dabapps": "github:dabapps/tslint-config-dabapps#v0.6.2",
-    "typescript": "^3.3.4000"
+    "tslint-config-dabapps": "github:dabapps/tslint-config-dabapps#v0.6.2"
   },
   "jest": {
     "coverageThreshold": {
